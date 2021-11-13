@@ -46,11 +46,42 @@ app.get("/api/joke", (req, res) => {
            "What has more letters than the alphabet? The post office",
   ];
 
-  // choose random fortune
+  // choose random joke
   let randomIndex = Math.floor(Math.random() * jokes.length);
   let randomJoke = jokes[randomIndex];
 
   res.status(200).send(randomJoke);
+  
+});
+
+app.get("/api/quote", (req, res) => {
+  const quotes = ["It is our choices that show who we truly are, far more than our abilities.",
+					 "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
+					 "Someday this pain will be useful to you.",
+           "The press of my foot to the earth springs a hundred affections",
+  ];
+
+  // choose random quote
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+  let randomQuote = quotes[randomIndex];
+
+  res.status(200).send(randomQuote);
+  
+});
+
+app.get("/api/valid", (req, res) => {
+  const validations = ["You are not too much",
+					 "You are enough",
+					 "You contain multitudes",
+           "You are loved",
+           "Your feelings are valid"
+  ];
+
+  // choose random quote
+  let randomIndex = Math.floor(Math.random() * validations.length);
+  let randomValid = validations[randomIndex];
+
+  res.status(200).send(randomValid);
   
 });
 
